@@ -24,5 +24,8 @@ export class ProductService {
 
   //  }
 
+  ProductDetails(id : number):Observable<ResultViewModel>{
+    return this.http.get<ResultViewModel>(`${environment.ApiUrl}product/`+id);
+   }
 
 }

@@ -22,7 +22,7 @@ import { ProductsComponent } from './Components/home/products/products.component
   declarations: [
     AppComponent,
     HomeComponent,
-    ProductsComponent
+    ProductsComponent,
   ],
   imports: [
     BrowserModule,
