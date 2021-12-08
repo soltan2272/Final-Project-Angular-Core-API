@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, Routes } from '@angular/router';
 import { ProductService } from 'src/app/Services/ProductService/product.service';
 import { IndexProduct } from 'src/app/ViewModels/index-product';
 
@@ -10,7 +11,7 @@ import { IndexProduct } from 'src/app/ViewModels/index-product';
 export class ProductsComponent implements OnInit {
 
   indexProducts:IndexProduct[]=[];
-  constructor(private productServes:ProductService){}
+  constructor(private productServes:ProductService , private rout : Router){}
 
   ngOnInit(): void {
     this.productServes.getAllProducts().subscribe(
@@ -21,5 +22,9 @@ export class ProductsComponent implements OnInit {
     )
   }
 
+  getproductditails(id : number)
+  {
+    this.rout.navigate(['/products/productdetails',id]);
+  }
 
 }

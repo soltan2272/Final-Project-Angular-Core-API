@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
 
 
@@ -14,7 +15,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
   ],
   imports: [
     CommonModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    AppRoutingModule
   ],
   exports:[HeaderComponent,FooterComponent]
 })
