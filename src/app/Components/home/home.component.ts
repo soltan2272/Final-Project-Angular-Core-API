@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from 'src/app/Services/ProductService/product.service';
+import { IndexProduct } from 'src/app/ViewModels/index-product';
 
 
 
@@ -10,6 +12,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  indexProducts:IndexProduct[]=[];
 
   // imageObject = [{                           // https://www.npmjs.com/package/ng-image-slider
   //   image: 'assets/img/h4-slide.png',
@@ -46,9 +49,15 @@ export class HomeComponent implements OnInit {
   // ];
   
   
-  constructor() { }
+  constructor(private productServes:ProductService){}
 
   ngOnInit(): void {
+    this.productServes.getAllProducts().subscribe(
+      (response) => {
+        this.indexProducts = response.data;
+      },
+      (error) => { console.log(error) }
+    )
   }
 
 }
