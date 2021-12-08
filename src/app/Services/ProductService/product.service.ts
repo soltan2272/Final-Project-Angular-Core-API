@@ -11,11 +11,10 @@ export class ProductService {
 
   constructor(private http:HttpClient) { }
 
-  indexProduct():Observable<ResultViewModel>{
+  getAllProducts():Observable<ResultViewModel>{
     return this.http.get<ResultViewModel>(`${environment.ApiUrl}product/userProducts`)
    }
 
- 
   //  getProductsByCategoryID(catID:number):Observable<IproductApi[]>{
   //   return this.http.get<IproductApi[]>(`${environment.ApiUrl}/products?CateogryID=${catID}`)
   //  }
