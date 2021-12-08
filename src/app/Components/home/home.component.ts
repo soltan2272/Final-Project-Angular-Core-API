@@ -52,7 +52,7 @@ export class HomeComponent implements OnInit {
   constructor(private productServes:ProductService){}
 
   ngOnInit(): void {
-    this.productServes.getAllProducts().subscribe(
+    this.productServes.indexProduct().subscribe(
       (response) => {
         this.indexProducts = response.data;
       },
