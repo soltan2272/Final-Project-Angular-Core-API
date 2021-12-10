@@ -1,7 +1,0 @@
-https://mdbootstrap.com/docs/angular/getting-started/installation/
-
-
-https://therichpost.com/angular-11-ecommerce-templates-free/
-
-
-https://www.truecodex.com/course/angular-6/how-to-use-external-js-files-and-javascript-code-in-angular

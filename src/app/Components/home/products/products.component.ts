@@ -25,6 +25,8 @@ export class ProductsComponent implements OnInit {
   getproductditails(id : number)
   {
     this.rout.navigate(['/products/productdetails',id]);
+
   }
+
 
 }

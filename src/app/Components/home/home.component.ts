@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoryService } from 'src/app/Services/CategoryService/category.service';
+import { ICategory } from 'src/app/ViewModels/Category/i-category';
 
 
 @Component({
@@ -7,11 +9,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
- 
-  constructor(){}
-
+ category:ICategory[]=[];
+  constructor(private categoryservice:CategoryService){}
   ngOnInit(): void {
-   
-  }
+    this.categoryservice.getcateory().subscribe(response=>
+     this.category=response.data
+     )
+   }
+
+
 
 }

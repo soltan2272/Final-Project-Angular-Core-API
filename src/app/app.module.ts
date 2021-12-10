@@ -1,46 +1,45 @@
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CartModule } from './Components/cart/cart.module';
-import { CustformsModule } from './Components/custforms/custforms.module';
-import { LayoutModule } from './Components/layout/layout.module';
-import { ProductModule } from './Components/product/product.module';
-import { ShopModule } from './Components/shop/shop.module';
-import { UserModule } from './Components/user/user.module';
+import { HeaderComponent } from './Components/header/header.component';
+import { FooterComponent } from './Components/footer/footer.component';
 import { HomeComponent } from './Components/home/home.component';
-import { NgImageSliderModule } from 'ng-image-slider';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
 import { ProductsComponent } from './Components/home/products/products.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ProductModule } from './Components/productDetiales/product/product.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Ng2SearchPipe, Ng2SearchPipeModule } from 'ng2-search-filter';
+import { Ng2OrderModule } from 'ng2-order-pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { RatePipePipe } from './filtersPipe/rate-pipe.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent,
+    FooterComponent,
     HomeComponent,
     ProductsComponent,
+    RatePipePipe,
+
+
+    
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CartModule,
-    CustformsModule,
-    LayoutModule,
-    ProductModule,
-    ShopModule,
-    UserModule,
     FormsModule,
+    ProductModule ,
     ReactiveFormsModule,
-    NgImageSliderModule,
-    MDBBootstrapModule,
+    HttpClientModule,
     BrowserAnimationsModule,
-    HttpClientModule
-
-
+    Ng2SearchPipeModule,
+    Ng2OrderModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,8 @@
+import { ProductImage } from "./productImage/product-image";
+
 export interface IndexProduct {
     id:number,
-    image:string,
+    image:ProductImage[],
     name:string,
     rate:number,
     price:number,

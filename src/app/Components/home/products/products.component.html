@@ -9,7 +9,7 @@
     </div>
     <div class="card-body">
       <h2 class="card-title">{{p.name}}</h2>
-      <h3>Price : {{p.price | currency : 'LE'}}</h3>
+      <h3>Price : {{p.price }}</h3>
         <div [ngSwitch]="p.rate">
           <div *ngSwitchCase="1">
             <span id="s1" class="s1 fa fa-star checked"></span>
