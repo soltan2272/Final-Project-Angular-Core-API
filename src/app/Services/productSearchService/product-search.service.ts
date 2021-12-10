@@ -15,7 +15,10 @@ export class ProductSearchService {
     return this.http.get<ResultViewModel>(`${environment.ApiUrl}search/Name/`+name)
    }
 
-   filterCategoryName(Category:number):Observable<ResultViewModel>{
-    return this.http.get<ResultViewModel>(`${environment.ApiUrl}search/Category/`+Category)
+   filterCategoryName(Category:number,name:string):Observable<ResultViewModel>{
+    return this.http.get<ResultViewModel>(`${environment.ApiUrl}search/Category/${Category}/${name}`)
+   }
+   filterCategorysearchName(Category:number):Observable<ResultViewModel>{
+    return this.http.get<ResultViewModel>(`${environment.ApiUrl}search/Category/${Category}`)
    }
 }

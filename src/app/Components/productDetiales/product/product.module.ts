@@ -7,18 +7,22 @@ import { IProduct } from 'src/app/ViewModels/iproduct';
 import { RouterModule, Routes } from '@angular/router';
 import { ProductSearchComponent } from './product-search/product-search.component';
 import { ProductdetailsComponent } from './productdetails/productdetails.component';
+import { CategoryProductsComponent } from './category-products/category-products.component';
 
 
 const routs:Routes=[
   {path:"productdetails/:pid", component:ProductdetailsComponent},
-  {path:"search/categoryid/:id", component:ProductSearchComponent},
-  {path:"search/name/category/:name/:catid", component:ProductSearchComponent}
+  {path:"searchcategory/:catid", component:CategoryProductsComponent},
+  {path:"search/:category/:name", component:ProductSearchComponent},
+  {path:"search/:name", component:ProductSearchComponent},
+  // {path:"search/name/category/:name/:catid", component:ProductSearchComponent}
 ]
 
 @NgModule({
   declarations: [
     ProductdetailsComponent,
-    ProductSearchComponent
+    ProductSearchComponent,
+    CategoryProductsComponent
   ],
   imports: [
     CommonModule,

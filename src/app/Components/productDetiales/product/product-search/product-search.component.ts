@@ -12,7 +12,8 @@ export class ProductSearchComponent implements OnInit {
 
   searchname: string | undefined;
   resultsearch: IndexProduct[] = [];
-   searchcategory!: number;
+  searchcategory!: number;
+  name!: string;
 
   constructor(private activerouter: ActivatedRoute,
     private searchservice: ProductSearchService,
@@ -20,22 +21,21 @@ export class ProductSearchComponent implements OnInit {
     
   ngOnInit(): void {
 
-    this.activerouter.paramMap.subscribe(param => {
-      this.searchname = String(param.get('name'));
-      this.searchservice.filterSearchName(this.searchname).subscribe(reaponse => {
-        this.resultsearch = reaponse.data;
-      })
-
+    
+    this.activerouter.paramMap.subscribe(param =>{
+      this.searchcategory = Number(param.get('category'));
+      this.name = String(param.get('name'));
+      this.searchservice.filterCategoryName(this.searchcategory,this.name).subscribe(res =>
+        {
+          this.resultsearch = res.data;
+        })
     })
-
-
-
-    this.activerouter.paramMap.subscribe(param => {
-      this.searchcategory = Number(param.get('id'));
-      this.searchservice.filterCategoryName(this.searchcategory).subscribe(reaponse => {
-        this.resultsearch = reaponse.data;
-      })
-
+    this.activerouter.paramMap.subscribe(param =>{
+      this.name = String(param.get('name'));
+      this.searchservice.filterSearchName(this.name).subscribe(res =>
+        {
+          this.resultsearch = res.data;
+        })
     })
   }
 

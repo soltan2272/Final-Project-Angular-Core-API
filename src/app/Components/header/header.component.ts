@@ -22,22 +22,22 @@ categorylist:ICategory[]=[];
   }
   
 
-  searchproduct(search:any,category?:any){
+  searchproduct(search:any,category:any){
      search as ElementRef;
      if(category! as number){
-      this.router.navigate(['/products/name/category',search.value]);
+      this.router.navigate(['/products/search/',search.value]);
      }
 
      else
      {
-      this.router.navigate(['/products/search/name/category',category,search.value]);
+      this.router.navigate(['/products/search/',category,search.value]);
 
      }
     search.value="";
   }
  
   gocategory(id:number){
-    this.router.navigate(['/products/search/categoryid',id]);
+    this.router.navigate(['/products/searchcategory',id]);
 
   }
 }
